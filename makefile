@@ -13,7 +13,7 @@ OBJ_LIST=$(patsubst ./%.cpp,%.o,$(SRC_LIST))
 DEP_LIST=$(patsubst ./%.cpp,%.d,$(SRC_LIST))
 
 ifndef TARGET
-TARGET=main.exe
+TARGET=main$(TARGET_SUFFIX)
 endif
 
 DEBUG=-g
@@ -33,7 +33,7 @@ LDFLAGS=
 
 OUTPUT_DIR=build
 BUILD_TYPE_DIR=$(OUTPUT_DIR)/$(BUILD_TYPE)
-TARGET_DIR=$(BUILD_TYPE_DIR)/exe
+TARGET_DIR=$(BUILD_TYPE_DIR)/bin
 OBJECT_DIR=$(BUILD_TYPE_DIR)/obj
 DEPEND_DIR=$(OUTPUT_DIR)/depend
 INCLUDE_DIR=$(sort $(dir $(INC_LIST)))
