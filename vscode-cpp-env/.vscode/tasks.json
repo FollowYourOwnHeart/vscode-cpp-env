@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build Debug",
+            "type": "shell",
+            "command": "mingw32-make.exe",
+            "args": [
+                "TARGET=${workspaceRootFolderName}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build release",
+            "type": "shell",
+            "command": "mingw32-make.exe",
+            "args": [
+                "TARGET=${workspaceRootFolderName}.exe",
+                "release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "mingw32-make",
+            "args": [
+                "clean"
+            ]
+        },
+        {
+            "label": "auto run",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/exe/${workspaceRootFolderName}.exe",
+            "args": [
+            ],
+        },
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "${env:DEBUG}"
+            ]
+        }
+    ]
+}
