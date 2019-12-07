@@ -12,8 +12,10 @@ INC_LIST=$(call all-files,./,$(INC_SUFFIX))
 OBJ_LIST=$(patsubst ./%.cpp,%.o,$(SRC_LIST))
 DEP_LIST=$(patsubst ./%.cpp,%.d,$(SRC_LIST))
 
-ifndef TARGET
-TARGET=main$(TARGET_SUFFIX)
+ifndef TARGET_
+TARGET:=main$(TARGET_SUFFIX)
+else
+TARGET:=${TARGET_}$(TARGET_SUFFIX)
 endif
 
 DEBUG=-g
@@ -75,7 +77,7 @@ release:
 
 start_log:
 	@echo Build [$(BUILD_TYPE)] version.
-	@echo -e "\n"
+	@echo -e -n "\n"
 
 help:
 	@echo make ..............build debug version $(TARGET_DIR)/$(TARGET)

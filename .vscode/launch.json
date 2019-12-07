@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/${workspaceRootFolderName}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "F:\\software\\mingw32\\bin\\gdb.exe",
+            //"preLaunchTask": "Build Debug"
+        },
+/*         {
+            "name": "Release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+                "/C",
+                "${workspaceFolder}/build/Debug/bin/${workspaceRootFolderName}.exe",
+                "&&",
+                "pause"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "F:\\software\\mingw32\\bin\\gdb.exe",
+            "preLaunchTask": "Build Release"
+        }, */
+    ]
+}

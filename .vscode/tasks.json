@@ -1,0 +1,75 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build and Running",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "mingw32-make",
+                "TARGET_=${workspaceRootFolderName}",
+                "&&",
+                "echo",
+                "==========================",
+                "program",
+                "start",
+                "=================================",
+                "&&",
+                "${workspaceFolder}/build/Debug/bin/${workspaceRootFolderName}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build Debug",
+            "type": "shell",
+            "command": "mingw32-make",
+            "args": [
+                "TARGET_=${workspaceRootFolderName}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build Release",
+            "type": "shell",
+            "command": "mingw32-make",
+            "args": [
+                "TARGET_=${workspaceRootFolderName}",
+                "release"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build clean",
+            "type": "shell",
+            "command": "mingw32-make",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Running",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/Debug/bin/${workspaceRootFolderName}.exe",
+            "args": [],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
